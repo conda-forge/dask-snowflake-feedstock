@@ -1,5 +1,5 @@
 {% set name = "dask-snowflake" %}
-{% set version = "0.0.2" %}
+{% set version = "0.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 23b6586890ab8d906d58bc5ceb40393888c6c0aa19df0517aa444d149ed2b052
+  sha256: 750aedbdee120c70c3d1ced1bf6f8d953b929f9173f2abb26ae99491310a3e0c
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -40,7 +40,7 @@ about:
   license: BSD-3-Clause
   license_family: MIT
   license_file: LICENSE
-  summary: 'Dask integration for Snowflake'
+  summary: Dask integration for Snowflake
   description: |
     Dask integration for Snowflake
   doc_url: https://github.com/coiled/dask-snowflake
