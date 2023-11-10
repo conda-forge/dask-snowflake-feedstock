@@ -1,5 +1,5 @@
 {% set name = "dask-snowflake" %}
-{% set version = "0.2.0" %}
+{% set version = "0.3.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: fd70e065dcd6d4cf4a8a65e6e1aedb03d6a2d35248c806d683c4619f9392aa8c
+  sha256: 9893e3bec36e0109374631f5875fe08b3bc8ffcc1fa60472149b44bdb968f577
 
 build:
   noarch: python
@@ -18,6 +18,7 @@ requirements:
   host:
     - python >=3.7
     - pip
+    - setuptools_scm
   run:
     - python >=3.7
     - dask >=2021.05.0
@@ -25,6 +26,7 @@ requirements:
     - pyarrow
     - snowflake-connector-python >=2.6.0
     - snowflake-sqlalchemy
+    - sqlalchemy
 
 test:
   imports:
