@@ -6,21 +6,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 5cb58b99981ef35bd32510bf54ada3132689b56f76e16d54b774834b3bf95391
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python >=3.9
+    - python {{ python_min }}
     - pip
     - setuptools_scm
   run:
-    - python >=3.9
+    - python >={{ python_min }}
     - dask >=2024.3.0
     - pandas <2.2
     - pyarrow
@@ -33,6 +33,7 @@ test:
     - dask_snowflake
   requires:
     - pip
+    - python {{ python_min }}
   commands:
     - pip check
 
