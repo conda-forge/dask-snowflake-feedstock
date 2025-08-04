@@ -22,7 +22,7 @@ requirements:
   run:
     - python >={{ python_min }}
     - dask >=2024.3.0
-    - pandas <2.2
+    - pandas
     - pyarrow
     - snowflake-connector-python >=2.6.0
     - snowflake-sqlalchemy
